@@ -46,7 +46,6 @@ def get_forecast( city='Pittsburgh' ):
     else:
         return period
 
-
 def main():
     period = get_forecast()
 
