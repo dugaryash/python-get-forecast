@@ -15,36 +15,33 @@ class ForecastUnavailable(Exception):
         
 
 geolocator = Nominatim(user_agent="ModernProgramming")
-    location = geolocator.geocode(city)
-    latitude = location.latitude
-    longitude = location.longitude
+    loc = geolocator.geocode(city)
+    lat, long = loc.latitude, loc.longitude
 
-    if (latitude is None or longitude is None):
-        raise CityNotFoundError("Latitude and Longitude fields are empty.")
+    if (lat is None or long is None):
+        raise CityNotFoundError("Latitude and Longitude fields are unavailable.")
 
-    URL = f'https://api.weather.gov/points/{latitude},{longitude}'
-    response = requests.get(URL)
-    if (response.status_code != 200):
-        raise ForecastUnavailable("Period is empty or status code is not 200.")
+    link = f'https://api.weather.gov/points/{lat},{long}'
+    resp = requests.get(link)
+    if (resp.status_code != 200):
+        raise ForecastUnavailable("Status code unsuccessful.")
 
-    details = response.json()
-    forecast_link = details['properties']['forecast']
-    response = requests.get(forecast_link)
-    details = response.json()
-    info = details['properties']['periods']
+    link2 = resp.json()['properties']['forecast']
+    resp2 = requests.get(forecast_link)
+    info = resp2.json()['properties']['periods']
 
     for i in range(len(info)):
         if (info[i]["name"] == "Tonight"):
-            startTime = info[i]['startTime']
-            endTime = info[i]['endTime']
-            detailedForecast = info[i]['detailedForecast']
+            start_time = info[i]['startTime']
+            end_time = info[i]['endTime']
+            detailed_forecast = info[i]['detailedForecast']
 
-    period = {"startTime": startTime,
-              "endTime": endTime,
-              "detailedForecast": detailedForecast}
+    period = {"startTime": start_time,
+              "endTime": end_time,
+              "detailedForecast": detailed_forecast}
 
     if (len(period) == 0):
-        raise ForecastUnavailable("Period is empty or status code is not 200.")
+        raise ForecastUnavailable("Period is empty.")
     else:
         return period
 
