@@ -6,7 +6,7 @@ import pandas as pd
 
 class CityNotFoundError(Exception):
     def _init_(self, msg):
-        super()._init_(msg) 
+        super()._init_(msg)
 
 
 class ForecastUnavailable(Exception):
