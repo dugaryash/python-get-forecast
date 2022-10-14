@@ -3,26 +3,51 @@ from geopy.geocoders import Nominatim
 import requests
 import pandas as pd
 
-def get_forecast( city='Pittsburgh' ):
-    '''
-    Returns the nightly's forecast for a given city.
 
-    Inputs:
-    city (string): A valid string
+class CityNotFoundError(Exception):
+    def _init_(self, msg):
+        super()._init_(msg)
 
-    Output:
-    period (dictionary/JSON): a dictionary containing at least, the forecast keys startTime, endTime and detailedForecast.
 
-    Throws:
-    CityNotFoundError if geopy returns empty list or if the latitude longitude fields are empty.
+class ForecastUnavailable(Exception):
+    def _init_(self, msg):
+        super()._init_(msg)
+        
 
-    ForecastUnavailable if the period is empty or the API throws any status code that is not 200
+geolocator = Nominatim(user_agent="ModernProgramming")
+    location = geolocator.geocode(city)
+    latitude = location.latitude
+    longitude = location.longitude
 
-    Hint:
-    * Return the period that is labeled as "Tonight"
-    '''
+    if (latitude is None or longitude is None):
+        raise CityNotFoundError("Latitude and Longitude fields are empty.")
 
-    raise NotImplementedError()
+    URL = f'https://api.weather.gov/points/{latitude},{longitude}'
+    response = requests.get(URL)
+    if (response.status_code != 200):
+        raise ForecastUnavailable("Period is empty or status code is not 200.")
+
+    details = response.json()
+    forecast_link = details['properties']['forecast']
+    response = requests.get(forecast_link)
+    details = response.json()
+    info = details['properties']['periods']
+
+    for i in range(len(info)):
+        if (info[i]["name"] == "Tonight"):
+            startTime = info[i]['startTime']
+            endTime = info[i]['endTime']
+            detailedForecast = info[i]['detailedForecast']
+
+    period = {"startTime": startTime,
+              "endTime": endTime,
+              "detailedForecast": detailedForecast}
+
+    if (len(period) == 0):
+        raise ForecastUnavailable("Period is empty or status code is not 200.")
+    else:
+        return period
+
 
 def main():
     period = get_forecast()
@@ -40,13 +65,14 @@ def main():
 
     #sort repositories
     file = open("README.md", "w")
-    file.write('![Status](https://github.com/icaoberg/python-get-forecast/actions/workflows/build.yml/badge.svg)\n')
-    file.write('![Status](https://github.com/icaoberg/python-get-forecast/actions/workflows/pretty.yml/badge.svg)\n')
+    file.write('![Status](https://github.com/dugaryash/python-get-forecast/actions/workflows/build.yml/badge.svg)\n')
+    file.write('![Status](https://github.com/dugaryash/python-get-forecast/actions/workflows/pretty.yml/badge.svg)\n')
     file.write('# Pittsburgh Nightly Forecast\n\n')
     
     file.write(df.to_markdown(tablefmt='github'))
     file.write('\n\n---\nCopyright © 2022 Pittsburgh Supercomputing Center. All Rights Reserved.')
     file.close()
+
 
 if __name__ == "__main__":
     main()
