@@ -15,7 +15,7 @@ class ForecastUnavailable(Exception):
         
 
 def get_forecast( city='Pittsburgh' ):
-q   geolocator = Nominatim(user_agent="ModernProgramming")
+    geolocator = Nominatim(user_agent="ModernProgramming")
     loc = geolocator.geocode(city)
     lat, long = loc.latitude, loc.longitude
 
