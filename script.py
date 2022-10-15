@@ -40,11 +40,7 @@ def get_forecast( city='Pittsburgh' ):
     period = {"startTime": start_time,
               "endTime": end_time,
               "detailedForecast": detailed_forecast}
-
-    if (len(period) == 0):
-        raise ForecastUnavailable("Period is empty.")
-    else:
-        return period
+    return period
 
     
 def main():
