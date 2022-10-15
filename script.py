@@ -62,14 +62,14 @@ def main():
 
     '''sort repositories'''
     file = open("README.md", "w")
-    file.write('![Status](https://github.com/dugaryash/python-'+
+    file.write('![Status](https://github.com/dugaryash/python-' +
                'get-forecast/actions/workflows/build.yml/badge.svg)\n')
-    file.write('![Status](https://github.com/dugaryash/python-'+
+    file.write('![Status](https://github.com/dugaryash/python-' +
                'get-forecast/actions/workflows/pretty.yml/badge.svg)\n')
     file.write('# Pittsburgh Nightly Forecast\n\n')
 
     file.write(df.to_markdown(tablefmt='github'))
-    file.write('\n\n---\nCopyright © 2022 Pittsburgh '+
+    file.write('\n\n---\nCopyright © 2022 Pittsburgh ' +
                'Supercomputing Center. All Rights Reserved.')
     file.close()
 
