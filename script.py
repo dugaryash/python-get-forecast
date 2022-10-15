@@ -28,7 +28,7 @@ def get_forecast( city='Pittsburgh' ):
         raise ForecastUnavailable("Status code unsuccessful.")
 
     link2 = resp.json()['properties']['forecast']
-    resp2 = requests.get(forecast_link)
+    resp2 = requests.get(link2)
     info = resp2.json()['properties']['periods']
 
     for i in range(len(info)):
