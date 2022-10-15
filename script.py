@@ -12,7 +12,7 @@ class CityNotFoundError(Exception):
 class ForecastUnavailable(Exception):
     def _init_(self, msg):
         super()._init_(msg)
-  
+
 
 def get_forecast(city='Pittsburgh'):
     geolocator = Nominatim(user_agent="ModernProgramming")
@@ -42,7 +42,7 @@ def get_forecast(city='Pittsburgh'):
               "detailedForecast": detailed_forecast}
     return period
 
-    
+
 def main():
     period = get_forecast()
 
@@ -57,7 +57,7 @@ def main():
     df = df.drop_duplicates()
     df.to_pickle(file)
 
-    #sort repositories
+    '''sort repositories'''
     file = open("README.md", "w")
     file.write('![Status](https://github.com/dugaryash/python-get-forecast/actions/workflows/build.yml/badge.svg)\n')
     file.write('![Status](https://github.com/dugaryash/python-get-forecast/actions/workflows/pretty.yml/badge.svg)\n')
