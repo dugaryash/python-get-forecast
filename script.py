@@ -12,9 +12,9 @@ class CityNotFoundError(Exception):
 class ForecastUnavailable(Exception):
     def _init_(self, msg):
         super()._init_(msg)
-        
+  
 
-def get_forecast( city='Pittsburgh' ):
+def get_forecast(city='Pittsburgh'):
     geolocator = Nominatim(user_agent="ModernProgramming")
     loc = geolocator.geocode(city)
     lat, long = loc.latitude, loc.longitude
@@ -49,7 +49,7 @@ def main():
     file = 'weather.pkl'
 
     if Path(file).exists():
-        df = pd.read_pickle( file )
+        df = pd.read_pickle(file)
     else:
         df = pd.DataFrame(columns=['Start Date', 'End Date', 'Forecast'])
 
@@ -62,7 +62,7 @@ def main():
     file.write('![Status](https://github.com/dugaryash/python-get-forecast/actions/workflows/build.yml/badge.svg)\n')
     file.write('![Status](https://github.com/dugaryash/python-get-forecast/actions/workflows/pretty.yml/badge.svg)\n')
     file.write('# Pittsburgh Nightly Forecast\n\n')
-    
+
     file.write(df.to_markdown(tablefmt='github'))
     file.write('\n\n---\nCopyright © 2022 Pittsburgh Supercomputing Center. All Rights Reserved.')
     file.close()
