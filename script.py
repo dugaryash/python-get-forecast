@@ -20,7 +20,7 @@ def get_forecast(city='Pittsburgh'):
     lat, long = loc.latitude, loc.longitude
 
     if (lat is None or long is None):
-        raise CityNotFoundError("Latitude and Longitude fields are unavailable.")
+        raise CityNotFoundError("Latitude and Longitude unavailable.")
 
     link = f'https://api.weather.gov/points/{lat},{long}'
     resp = requests.get(link)
@@ -53,18 +53,24 @@ def main():
     else:
         df = pd.DataFrame(columns=['Start Date', 'End Date', 'Forecast'])
 
-    df = df.append({'Start Date': period['startTime'], 'End Date': period['endTime'], 'Forecast': period['detailedForecast']}, ignore_index=True)
+    df = df.append({'Start Date': period['startTime'],
+                    'End Date': period['endTime'],
+                    'Forecast': period['detailedForecast']},
+                   ignore_index=True)
     df = df.drop_duplicates()
     df.to_pickle(file)
 
     '''sort repositories'''
     file = open("README.md", "w")
-    file.write('![Status](https://github.com/dugaryash/python-get-forecast/actions/workflows/build.yml/badge.svg)\n')
-    file.write('![Status](https://github.com/dugaryash/python-get-forecast/actions/workflows/pretty.yml/badge.svg)\n')
+    file.write('![Status](https://github.com/dugaryash/python-'+
+               'get-forecast/actions/workflows/build.yml/badge.svg)\n')
+    file.write('![Status](https://github.com/dugaryash/python-'+
+               'get-forecast/actions/workflows/pretty.yml/badge.svg)\n')
     file.write('# Pittsburgh Nightly Forecast\n\n')
 
     file.write(df.to_markdown(tablefmt='github'))
-    file.write('\n\n---\nCopyright © 2022 Pittsburgh Supercomputing Center. All Rights Reserved.')
+    file.write('\n\n---\nCopyright © 2022 Pittsburgh '+
+               'Supercomputing Center. All Rights Reserved.')
     file.close()
 
 
