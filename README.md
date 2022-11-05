@@ -23,6 +23,7 @@
 | 16 | 2022-11-01T19:00:00-04:00 | 2022-11-02T06:00:00-04:00 | Areas of fog after 9pm. Mostly cloudy, with a low around 49. Northwest wind 0 to 3 mph.                                                                                             |
 | 17 | 2022-11-02T20:00:00-04:00 | 2022-11-03T06:00:00-04:00 | Widespread fog after 2am. Mostly cloudy, with a low around 46. East wind around 2 mph.                                                                                              |
 | 18 | 2022-11-03T20:00:00-04:00 | 2022-11-04T06:00:00-04:00 | Mostly clear, with a low around 48. Southeast wind around 3 mph.                                                                                                                    |
+| 19 | 2022-11-04T20:00:00-04:00 | 2022-11-05T06:00:00-04:00 | Partly cloudy, with a low around 57. South wind around 6 mph.                                                                                                                       |
 
 ---
 Copyright © 2022 Pittsburgh Supercomputing Center. All Rights Reserved.
