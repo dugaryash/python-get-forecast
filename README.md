@@ -34,6 +34,7 @@
 | 27 | 2022-11-12T19:00:00-05:00 | 2022-11-13T06:00:00-05:00 | A slight chance of rain before 8pm, then scattered snow showers. Cloudy, with a low around 33. West wind around 7 mph. Chance of precipitation is 30%.                                                                                                 |
 | 28 | 2022-11-13T19:00:00-05:00 | 2022-11-14T06:00:00-05:00 | Scattered snow showers before 10pm. Mostly cloudy, with a low around 28. West wind 3 to 8 mph.                                                                                                                                                         |
 | 29 | 2022-11-14T19:00:00-05:00 | 2022-11-15T06:00:00-05:00 | Mostly cloudy, with a low around 31. Northeast wind around 5 mph.                                                                                                                                                                                      |
+| 30 | 2022-11-15T19:00:00-05:00 | 2022-11-16T06:00:00-05:00 | Rain showers likely before 3am. Cloudy, with a low around 35. Southwest wind 2 to 7 mph. Chance of precipitation is 70%. New rainfall amounts less than a tenth of an inch possible.                                                                   |
 
 ---
 Copyright © 2022 Pittsburgh Supercomputing Center. All Rights Reserved.
