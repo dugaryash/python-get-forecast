@@ -36,6 +36,7 @@
 | 29 | 2022-11-14T19:00:00-05:00 | 2022-11-15T06:00:00-05:00 | Mostly cloudy, with a low around 31. Northeast wind around 5 mph.                                                                                                                                                                                      |
 | 30 | 2022-11-15T19:00:00-05:00 | 2022-11-16T06:00:00-05:00 | Rain showers likely before 3am. Cloudy, with a low around 35. Southwest wind 2 to 7 mph. Chance of precipitation is 70%. New rainfall amounts less than a tenth of an inch possible.                                                                   |
 | 31 | 2022-11-16T19:00:00-05:00 | 2022-11-17T06:00:00-05:00 | A chance of snow showers before 4am. Mostly cloudy, with a low around 28. West wind 6 to 10 mph, with gusts as high as 22 mph. Chance of precipitation is 40%. Little or no snow accumulation expected.                                                |
+| 32 | 2022-11-17T18:00:00-05:00 | 2022-11-18T06:00:00-05:00 | A slight chance of snow showers before 7pm. Mostly cloudy, with a low around 27. Southwest wind around 9 mph. Chance of precipitation is 20%.                                                                                                          |
 
 ---
 Copyright © 2022 Pittsburgh Supercomputing Center. All Rights Reserved.
