@@ -41,6 +41,7 @@
 | 34 | 2022-11-20T19:00:00-05:00 | 2022-11-21T06:00:00-05:00 | Clear, with a low around 20. Southwest wind around 6 mph.                                                                                                                                                                                              |
 | 35 | 2022-11-21T18:00:00-05:00 | 2022-11-22T06:00:00-05:00 | Mostly clear, with a low around 26. Southwest wind 3 to 10 mph.                                                                                                                                                                                        |
 | 36 | 2022-11-22T18:00:00-05:00 | 2022-11-23T06:00:00-05:00 | Clear, with a low around 28. South wind around 6 mph.                                                                                                                                                                                                  |
+| 37 | 2022-11-23T19:00:00-05:00 | 2022-11-24T06:00:00-05:00 | Mostly clear, with a low around 28. South wind around 2 mph.                                                                                                                                                                                           |
 
 ---
 Copyright © 2022 Pittsburgh Supercomputing Center. All Rights Reserved.
