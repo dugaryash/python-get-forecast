@@ -47,6 +47,7 @@
 | 40 | 2022-11-27T19:00:00-05:00 | 2022-11-28T06:00:00-05:00 | Rain showers likely. Cloudy, with a low around 41. West wind 12 to 16 mph, with gusts as high as 31 mph. Chance of precipitation is 60%.                                                                                                               |
 | 41 | 2022-11-28T18:00:00-05:00 | 2022-11-29T06:00:00-05:00 | Mostly cloudy, with a low around 36. South wind around 3 mph.                                                                                                                                                                                          |
 | 42 | 2022-11-29T19:00:00-05:00 | 2022-11-30T06:00:00-05:00 | Rain showers after 1am. Mostly cloudy. Low around 43, with temperatures rising to around 50 overnight. Southeast wind 7 to 13 mph. Chance of precipitation is 90%. New rainfall amounts between a tenth and quarter of an inch possible.               |
+| 43 | 2022-11-30T19:00:00-05:00 | 2022-12-01T06:00:00-05:00 | Mostly cloudy, with a low around 25. West wind around 13 mph, with gusts as high as 25 mph. Chance of precipitation is 20%.                                                                                                                            |
 
 ---
 Copyright © 2022 Pittsburgh Supercomputing Center. All Rights Reserved.
